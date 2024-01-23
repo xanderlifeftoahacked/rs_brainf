@@ -1,3 +1,4 @@
+use std::clone;
 use std::env;
 use std::fs::File;
 use std::io;
@@ -5,8 +6,7 @@ use std::io::Read;
 use std::io::Write;
 use std::process;
 
-#[allow(dead_code)]
-#[derive(Debug, Clone)]
+#[derive(Clone)]
 enum Lexeme {
     IncrPtr,   // Alexander
     DecrPtr,   // sanya
@@ -18,8 +18,7 @@ enum Lexeme {
     LoopEnd,   //sha
 }
 
-#[allow(dead_code)]
-#[derive(Debug, Clone)]
+#[derive(Clone)]
 enum Instruction {
     IncrPtr,
     DecrPtr,
